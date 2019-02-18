@@ -9,7 +9,8 @@ A simulation has to be done basis forces that products undergo during the journe
 ### Solution :
 We are making a website and a desktop application that we take input parameters like :
 Dimensions,State of product,Chemical properties,Durability of product,packaging material specified(ex. Tetrapack),etc of product.
-<!---a link to the list below should be given here once it is made -->
+[Full List](https://github.com/AkshitOstwal/CodeForVision/tree/Pre-release#constraints-and-factors-on-which-packaging-depends-on)
+<!---change the link once it it added to master -->
 We will use Machine Learning algorithm and\or network with these factors as a key properties with different weightage to get the lowest cost and maximum durability of the packaging.
 The output dimensions, material and packaging decided by the algorithm will be used to simulate the packaging for testing and damage calculation purposes.
 
