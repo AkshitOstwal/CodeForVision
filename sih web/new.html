@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>new product</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+
+  <body>
+     <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+        <div id="drop-area">
+  <form class="my-form">
+    <h4>Drag and drop product picture</h4>
+    <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+    <label class="btn btn-outline-success my-2 my-sm-0" for="fileElem">Browse files</label>
+  </form>
+  <div id="gallery"></div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <button class="button2" onclick="areasolid()" >Solid</button>
+    </div>
+    <div class="col-sm">
+      <button class="button2" onclick="areapowder()">Powder</button>
+    </div>
+    <div class="col-sm">
+     <button class="button2" onclick="arealiquid()"> Liquid</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<div id="solid">
+    <h1>solid</h1>
+     <form>
+
+<div class="input">
+    <label>Product:</label>
+  <input type="text" class="form-control" placeholder="Name of Product" aria-label="product name" >
+</div>
+
+<label>Product Dimensions:</label><br>
+
+<div class="input-group mb-3">
+    <label>height:</label>
+
+  <input type="text" class="form-control" >
+  <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon1">cm</span>
+  </div>
+</div>
+
+<div class="input-group mb-3">
+    <label>weight:</label>
+  <input type="text" class="form-control" >
+  <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2">cm</span>
+  </div>
+</div>
+
+<div class="input-group mb-3">
+    <label>length:</label>
+  <input type="text" class="form-control" >
+  <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon3">cm</span>
+  </div>
+</div>
+
+<label>Product properties:</label>
+
+<label class="button1">physical</label>
+<label class="button1">chemical</label>
+<label class="button1">biological</label>
+
+<div class="input-group">
+    <label>Cost of product</label>
+  <input type="text" class="form-control" aria-label="ruppee amount ">
+  <div class="input-group-append">
+    <span class="input-group-text">Rs</span>
+  </div>
+</div>
+
+<label>priority:</label>
+<input type="checkbox" name="cost" value="cost"> cost
+  <input type="checkbox" name="sustainability" value="sustainability"> sustainability <br>
+  <br>
+
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Extra info</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+</form>
+
+</div>
+
+<div id="powder">
+    <h1>powder</h1>
+</div>
+    
+<div id="liquid">
+    <h1>liquid</h1>
+</div>
+
+</div>
+
+</div><!--scripts-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="new.js"></script>
+
+    </main>
+
+  </body>
+  </html>
