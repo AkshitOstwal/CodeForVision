@@ -20,9 +20,11 @@ The output dimensions, material and packaging decided by the algorithm will be u
 1. Either get data set from ITC or create a demo data set
 1. Making the ML algorithm
 
-<!--- #### phase 2: -->
-
-
+ #### phase 2:
+ 
+1. Making of Android App that will create database in Firebase by extracting contents for food packets.
+1. Using ML KIT in Firebase.
+1. Generate a script that will fetch json data from firebase to show data in the WebApp.
 ## Constraints and factors on which packaging depends on:
 * Solid
     * all properties
