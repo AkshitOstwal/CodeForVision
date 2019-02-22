@@ -46,4 +46,7 @@ The output dimensions, material and packaging decided by the algorithm will be u
        * any other : 
     * etc
 * Liquid
+
+### **Important Links**
+[Food Dynamics](http://www.ift.org/knowledge-center/read-ift-publications/science-reports/scientific-status-summaries/food-packaging.aspx)
      
