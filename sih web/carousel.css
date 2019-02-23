@@ -83,12 +83,11 @@ body {
 }
 
 .button1 {
-  display: inline-block;
   padding: 10px;
   background-color: #839472;
   cursor: pointer;
   color: white;
-  border-radius: 40%;
+  text-align: center;
 }
 
 label{
@@ -104,6 +103,10 @@ label{
   display: none;
 }
 
+#extendliquid,#extendpowder,#extendphysical{
+  display: block;
+}
+
 #drop-area {
   border: 2px dashed #ccc;
   border-radius: 20px;
@@ -111,7 +114,7 @@ label{
   font-family: sans-serif;
   margin: 100px auto;
   padding: 20px;
-} 
+}
 
 #drop-area.highlight {
   border-color: purple;

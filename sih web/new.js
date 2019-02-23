@@ -92,3 +92,33 @@ function arealiquid() {
     y.style.display = "none";
     x.style.display = "none";
 }
+
+function forphysical() {
+    let x = document.getElementById('extendphysical');
+    if(x.style.display==="block"){
+      x.style.display = "none";
+    }
+    else{
+    x.style.display = "block";
+  }
+}
+
+function forpowder() {
+    let x = document.getElementById('extendpowder');
+    if(x.style.display==="block"){
+      x.style.display = "none";
+    }
+    else{
+    x.style.display = "block";
+  }
+}
+
+function forliquid() {
+    let x = document.getElementById('extendliquid');
+    if(x.style.display==="block"){
+      x.style.display = "none";
+    }
+    else{
+    x.style.display = "block";
+  }
+}
