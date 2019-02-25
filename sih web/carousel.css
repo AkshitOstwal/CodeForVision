@@ -76,10 +76,16 @@ body {
 .button2 {
   display: inline-block;
   padding: 30px;
-  background-color: #222;
   cursor: pointer;
-  color: white;
-  border-radius: 20%;
+  color: #222;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  }
+
+  .bottom-border {
+    border-bottom:  5px solid #222; 
+    outline: 0px;
 }
 
 .button1 {

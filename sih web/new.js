@@ -67,58 +67,104 @@ function previewFile(file) {
 }
 
 function areasolid() {
-    let x = document.getElementById('solid');
-    let y = document.getElementById('powder');
-    let z = document.getElementById('liquid');
-    x.style.display = "block";
-    y.style.display = "none";
-    z.style.display = "none";
+  let a = document.getElementById('t1').classList;
+  let b = document.getElementById('t2').classList;
+  let c = document.getElementById('t3').classList;
+  let x = document.getElementById('solid');
+  let y = document.getElementById('powder');
+  let z = document.getElementById('liquid');
+  x.style.display = "block";
+  y.style.display = "none";
+  z.style.display = "none";
+  if (b.contains("bottom-border")) {
+
+    b.remove("bottom-border");
+
+  }
+
+  if (c.contains("bottom-border")) {
+
+    c.remove("bottom-border");
+
+  }
+  a.toggle("bottom-border");
+
 }
 
 function areapowder() {
-    let x = document.getElementById('solid');
-    let y = document.getElementById('powder');
-    let z = document.getElementById('liquid');
-    y.style.display = "block";
-    x.style.display = "none";
-    z.style.display = "none";
+  let a = document.getElementById('t1').classList;
+  let b = document.getElementById('t2').classList;
+  let c = document.getElementById('t3').classList;
+  let x = document.getElementById('solid');
+  let y = document.getElementById('powder');
+  let z = document.getElementById('liquid');
+  y.style.display = "block";
+  x.style.display = "none";
+  z.style.display = "none";
+  if (a.contains("bottom-border")) {
+   
+    a.remove("bottom-border");
+    
+  }
+
+  if (c.contains("bottom-border")) {
+   
+    c.remove("bottom-border");
+    
+  }
+  b.toggle("bottom-border");
 }
 
 function arealiquid() {
-    let x = document.getElementById('solid');
-    let y = document.getElementById('powder');
-    let z = document.getElementById('liquid');
-    z.style.display = "block";
-    y.style.display = "none";
-    x.style.display = "none";
+  let a = document.getElementById('t1').classList;
+  let b = document.getElementById('t2').classList;
+  let c = document.getElementById('t3').classList;
+  let x = document.getElementById('solid');
+  let y = document.getElementById('powder');
+  let z = document.getElementById('liquid');
+  z.style.display = "block";
+  y.style.display = "none";
+  x.style.display = "none";
+  if (b.contains("bottom-border")) {
+   
+    b.remove("bottom-border");
+    
+  }
+
+  if (a.contains("bottom-border")) {
+   
+    a.remove("bottom-border");
+    
+  }
+  c.toggle("bottom-border");
 }
 
 function forphysical() {
-    let x = document.getElementById('extendphysical');
-    if(x.style.display==="block"){
-      x.style.display = "none";
-    }
-    else{
+  let x = document.getElementById('extendphysical');
+  if(x.style.display==="block"){
+    x.style.display = "none";
+  }
+  else{
     x.style.display = "block";
   }
 }
 
 function forpowder() {
-    let x = document.getElementById('extendpowder');
-    if(x.style.display==="block"){
-      x.style.display = "none";
-    }
-    else{
+  let x = document.getElementById('extendpowder');
+  if(x.style.display==="block"){
+    x.style.display = "none";
+  }
+  else{
     x.style.display = "block";
   }
 }
 
 function forliquid() {
-    let x = document.getElementById('extendliquid');
-    if(x.style.display==="block"){
-      x.style.display = "none";
-    }
-    else{
+  let x = document.getElementById('extendliquid');
+  if(x.style.display==="block"){
+    x.style.display = "none";
+  }
+  else{
     x.style.display = "block";
   }
 }
