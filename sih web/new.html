@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+
+  <title>new product</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="carousel.css" rel="stylesheet">
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-storage.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyByA7celafHSloxdOLA7_s-D097Ld10Jus",
+    authDomain: "firepack-66e50.firebaseapp.com",
+    databaseURL: "https://firepack-66e50.firebaseio.com",
+    projectId: "firepack-66e50",
+    storageBucket: "firepack-66e50.appspot.com",
+    messagingSenderId: "133886572018"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+</script>
+
+
+<script type="text/javascript">
+  window.onload = function(){
+   document.getElementById('send').onclick = function(e){
+    var a=document.getElementById("pname").value;
+    var b=document.getElementById("height").value;
+    var c=document.getElementById("width").value;
+    var d=document.getElementById("length").value;
+    var e=document.getElementById("cost").value;
+    if(document.getElementById("priorcost").checked){
+    var f=document.getElementById("priorcost").value;
+    }
+    else{
+    var f=document.getElementById("priorsust").value;}
+
+    // var message = '{name : a, height: b, width : c, length : d,cost: e,priorcost: f,priorsust: g }';
+    // var tosend = JSON.parse(message);
+    if(confirm("Your given inputs are:\n\n"+"name of product:"+a+"\nheight:"+b+"\nwidth:"+c+"\nlength:"+d+"\ncost:"+e+"\npriority:"+f+"\n\n"+"Do you want to send this data or cancel it ?\n"))
+    {
+    firebase.database().ref("users/").set({
+      name : a,
+      height: b,
+      width : c,
+      length : d,
+      cost: e,
+      priorcost: f,
+    });
+  }
+
+
+}
+}
+</script>
+
+
+</head>
+
+<body>
+ <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<main role="main">
+
+  <br><br>
+  <center><h1>NEW PRODUCT DETAILS</h1></center>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm"></div>
+      <div class="col-sm"></div>
+      <div class="col-sm"></div>
+      <div class="col-sm button2 bottom-border" onclick="areasolid()" id="t1" >
+        Solid
+      </div>
+      <div class="col-sm button2" onclick="areapowder()" id="t2">
+        Powder
+      </div>
+      <div class="col-sm button2" onclick="arealiquid()" id="t3">
+       Liquid
+     </div>
+   </div>
+ </div>
+
+ <div class="container">
+  <div id="solid">
+    <h1>solid</h1>
+    
+    <div class="row">
+      <div class="col-sm">
+        <div id="drop-area">
+
+          <h4>Drag and drop product pictures</h4>
+          <input type="file" name="fileElem" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+          <label class="btn btn-outline-success my-2 my-sm-0" for="fileElem">Browse files</label>
+
+          <div id="gallery"></div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <form class="my-form" method="POST">
+          <div class="input">
+            <label>Product:</label>
+            <input type="text" name="pname" id="pname" class="form-control" placeholder="Name of Product" aria-label="product name" >
+          </div>
+
+          <label>Product Dimensions:</label><br>
+
+          <div class="input-group mb-3">
+            <label>height:</label>
+
+            <input type="text" name="height" id="height" class="form-control" >
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon1">cm</span>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <label>width:</label>
+            <input type="text" name="width" id="width" class="form-control" >
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2">cm</span>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <label>length:</label>
+            <input type="text" name="length" id="length" class="form-control" >
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon3">cm</span>
+            </div>
+          </div>
+
+          <label>Product properties:</label>
+          <div class="container">
+            <div class="button1"  onclick="forphysical()" id="forphysical">
+              <h3>Physical</h3>
+            </div>
+            <div id="extendphysical">
+              samyak jain is awesome
+            </div>
+          </div>
+          <br>
+          <div class="container">
+            <div class="button1" onclick="forpowder()" id="forpowder">
+              <h3>Powder</h3>
+            </div>
+            <div id="extendpowder">
+              he is smart
+            </div>
+          </div>
+          <br>
+          <div class="container">
+            <div class="button1" onclick="forliquid()" id="forliquid">
+              <h3>Liquid</h3>
+            </div>
+            <div id="extendliquid">
+              sooumil is his friend
+            </div>
+          </div>
+          <br>
+          <div class="input-group">
+            <label>Cost of product</label>
+            <input type="text" name="cost" id="cost" class="form-control" aria-label="ruppee amount ">
+            <div class="input-group-append">
+              <span class="input-group-text">Rs</span>
+            </div>
+          </div>
+
+          <label>priority:</label>
+          <input type="radio" name="priority"  id="priorcost" value="cost" checked> cost
+          <input type="radio" name="priority" id="priorsust" value="sustainability"> sustainability <br>
+          <br>
+
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Extra info</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </div>
+          <br>
+          <input type="submit" class="button1" name="send" id="send" value="send" />
+        </form>
+      </div>
+    </div>
+    
+  </div>
+
+  <div id="powder">
+    <h1>powder</h1>
+  </div>
+
+  <div id="liquid">
+    <h1>liquid</h1>
+  </div>
+
+</div>
+
+</div><!--scripts-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="new.js"></script>
+
+</main>
+
+</body>
+</html>
