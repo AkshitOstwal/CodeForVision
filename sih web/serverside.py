@@ -14,14 +14,9 @@ firebase = pyrebase.initialize_app(config)
 
 db = firebase.database()
 
-db.child("users")
+users=db.get()
 
-data = {"name": "Mortimer"}
-db.child("users").set(data)
-
-users=db.child("users").get()
-
-print(users.val())
+#print(users.val())
 
 for user in users.each():
     print(user.key()) # Morty
