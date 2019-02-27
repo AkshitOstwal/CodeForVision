@@ -41,19 +41,19 @@ function handleFiles(files) {
 }
 
 
-function uploadFile(file) {
-  let url = 'fileshare.py'
-  let formData = new FormData()
+// function uploadFile(file) {
+//   let url = 'fileshare.py'
+//   let formData = new FormData()
 
-  formData.append('file', file)
+//   formData.append('file', file)
 
-  fetch(url, {
-    method: 'POST',
-    body: formData
-  })
-  .then(() => { console.log("upload done"); })
-  .catch(() => { console.log("upload failed"); })
-}
+//   fetch(url, {
+//     method: 'POST',
+//     body: formData
+//   })
+//   .then(() => { console.log("upload done"); })
+//   .catch(() => { console.log("upload failed"); })
+// }
 
 
 function previewFile(file) {
@@ -69,24 +69,16 @@ function previewFile(file) {
 function areasolid() {
   let a = document.getElementById('t1').classList;
   let b = document.getElementById('t2').classList;
-  let c = document.getElementById('t3').classList;
   let x = document.getElementById('solid');
   let y = document.getElementById('powder');
-  let z = document.getElementById('liquid');
   x.style.display = "block";
   y.style.display = "none";
-  z.style.display = "none";
   if (b.contains("bottom-border")) {
 
     b.remove("bottom-border");
 
   }
 
-  if (c.contains("bottom-border")) {
-
-    c.remove("bottom-border");
-
-  }
   a.toggle("bottom-border");
 
 }
@@ -94,49 +86,17 @@ function areasolid() {
 function areapowder() {
   let a = document.getElementById('t1').classList;
   let b = document.getElementById('t2').classList;
-  let c = document.getElementById('t3').classList;
   let x = document.getElementById('solid');
   let y = document.getElementById('powder');
-  let z = document.getElementById('liquid');
   y.style.display = "block";
   x.style.display = "none";
-  z.style.display = "none";
   if (a.contains("bottom-border")) {
    
     a.remove("bottom-border");
     
   }
 
-  if (c.contains("bottom-border")) {
-   
-    c.remove("bottom-border");
-    
-  }
   b.toggle("bottom-border");
-}
-
-function arealiquid() {
-  let a = document.getElementById('t1').classList;
-  let b = document.getElementById('t2').classList;
-  let c = document.getElementById('t3').classList;
-  let x = document.getElementById('solid');
-  let y = document.getElementById('powder');
-  let z = document.getElementById('liquid');
-  z.style.display = "block";
-  y.style.display = "none";
-  x.style.display = "none";
-  if (b.contains("bottom-border")) {
-   
-    b.remove("bottom-border");
-    
-  }
-
-  if (a.contains("bottom-border")) {
-   
-    a.remove("bottom-border");
-    
-  }
-  c.toggle("bottom-border");
 }
 
 function forphysical() {
@@ -149,8 +109,8 @@ function forphysical() {
   }
 }
 
-function forpowder() {
-  let x = document.getElementById('extendpowder');
+function forchemical() {
+  let x = document.getElementById('extendchemical');
   if(x.style.display==="block"){
     x.style.display = "none";
   }
@@ -159,12 +119,3 @@ function forpowder() {
   }
 }
 
-function forliquid() {
-  let x = document.getElementById('extendliquid');
-  if(x.style.display==="block"){
-    x.style.display = "none";
-  }
-  else{
-    x.style.display = "block";
-  }
-}

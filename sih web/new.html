@@ -47,27 +47,27 @@
     var d=document.getElementById("length").value;
     var e=document.getElementById("cost").value;
     if(document.getElementById("priorcost").checked){
-    var f=document.getElementById("priorcost").value;
+      var f=document.getElementById("priorcost").value;
     }
     else{
-    var f=document.getElementById("priorsust").value;}
+      var f=document.getElementById("priorsust").value;}
 
     // var message = '{name : a, height: b, width : c, length : d,cost: e,priorcost: f,priorsust: g }';
     // var tosend = JSON.parse(message);
     if(confirm("Your given inputs are:\n\n"+"name of product:"+a+"\nheight:"+b+"\nwidth:"+c+"\nlength:"+d+"\ncost:"+e+"\npriority:"+f+"\n\n"+"Do you want to send this data or cancel it ?\n"))
     {
-    firebase.database().ref("users/").set({
-      name : a,
-      height: b,
-      width : c,
-      length : d,
-      cost: e,
-      priorcost: f,
-    });
+      firebase.database().ref("users/").set({
+        name : a,
+        height: b,
+        width : c,
+        length : d,
+        cost: e,
+        priorcost: f,
+      });
+    }
+
+
   }
-
-
-}
 }
 </script>
 
@@ -117,126 +117,125 @@
       <div class="col-sm button2" onclick="areapowder()" id="t2">
         Powder
       </div>
-      <div class="col-sm button2" onclick="arealiquid()" id="t3">
-       Liquid
-     </div>
-   </div>
- </div>
+    </div>
+  </div>
 
- <div class="container">
-  <div id="solid">
-    <h1>solid</h1>
-    
-    <div class="row">
-      <div class="col-sm">
-        <div id="drop-area">
+  <div class="container">
+    <div id="solid">
+      <h1>solid</h1>
 
-          <h4>Drag and drop product pictures</h4>
-          <input type="file" name="fileElem" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-          <label class="btn btn-outline-success my-2 my-sm-0" for="fileElem">Browse files</label>
+      <div class="row">
+        <div class="col-sm">
+          <div id="drop-area">
 
-          <div id="gallery"></div>
+            <h4>Drag and drop product pictures</h4>
+            <input type="file" name="fileElem" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+            <label class="btn btn-outline-success my-2 my-sm-0" for="fileElem">Browse files</label>
+
+            <div id="gallery"></div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <form class="my-form" method="POST">
+            <div class="input">
+              <label>Product:</label>
+              <input type="text" name="pname" id="pname" class="form-control" placeholder="Name of Product" aria-label="product name" >
+            </div>
+
+            <label>Product Dimensions:</label><br>
+
+            <div class="input-group mb-3">
+              <label>height:</label>
+
+              <input type="text" name="height" id="height" class="form-control" >
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon1">cm</span>
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <label>width:</label>
+              <input type="text" name="width" id="width" class="form-control" >
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">cm</span>
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <label>length:</label>
+              <input type="text" name="length" id="length" class="form-control" >
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon3">cm</span>
+              </div>
+            </div>
+
+            <label>Product properties:</label>
+            <div class="container">
+              <div class="button1"  onclick="forphysical()" id="forphysical">
+                <h3>Physical</h3>
+              </div>
+              <div id="extendphysical">
+                <label>Volume:</label>
+              <input type="text" name="volume" id="volume" class="form-control" placeholder="volume of product" aria-label="product volume" ><br>
+              <label>Area:</label>
+              <input type="text" name="area" id="area" class="form-control" placeholder="area of product" aria-label="product area" ><br>
+              <label>Shock resistance:</label>
+              <input type="checkbox" name="brittle" id="brittle" value="brittle">  Brittle nature<br>
+              <label>Pressure bearing capacity: </label>
+              <input type="text" name="Pressure" id="Pressure" class="form-control" placeholder="Pressure bearing capacity" ><br>
+              <label>weight:</label>
+              <input type="text" name="weight" id="weight" class="form-control" placeholder="weight" ><br>
+              <label>Temperature limit:</label>
+              <input type="text" name="templimit" id="templimit" class="form-control" placeholder="Temperature" ><br>
+
+              </div>
+            </div>
+            <br>
+            <div class="container">
+              <div class="button1" onclick="forchemical()" id="forchemical">
+                <h3>Chemical</h3>
+              </div>
+              <div id="extendchemical">
+                <input type="checkbox" name="odour" id="odour" value="odour">  Odour<br><br>
+                <input type="checkbox" name="o2" id="o2" value="o2 ">  reaction with o2<br><br>
+                <input type="checkbox" name="flammable" id="flammable" value="flammable">  flammable<br><br>
+              </div>
+            </div>
+            <br>
+
+            <br>
+            <div class="input-group">
+              <label>Cost of product</label>
+              <input type="text" name="cost" id="cost" class="form-control" aria-label="ruppee amount ">
+              <div class="input-group-append">
+                <span class="input-group-text">Rs</span>
+              </div>
+            </div>
+
+            <label>priority:</label>
+            <input type="radio" name="priority"  id="priorcost" value="cost" checked> cost
+            <input type="radio" name="priority" id="priorsust" value="sustainability"> sustainability <br>
+            <br>
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Extra info</span>
+              </div>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+            <br>
+            <input type="submit" class="button1" name="send" id="send" value="send" />
+          </form>
         </div>
       </div>
-      <div class="col-sm">
-        <form class="my-form" method="POST">
-          <div class="input">
-            <label>Product:</label>
-            <input type="text" name="pname" id="pname" class="form-control" placeholder="Name of Product" aria-label="product name" >
-          </div>
 
-          <label>Product Dimensions:</label><br>
-
-          <div class="input-group mb-3">
-            <label>height:</label>
-
-            <input type="text" name="height" id="height" class="form-control" >
-            <div class="input-group-append">
-              <span class="input-group-text" id="basic-addon1">cm</span>
-            </div>
-          </div>
-
-          <div class="input-group mb-3">
-            <label>width:</label>
-            <input type="text" name="width" id="width" class="form-control" >
-            <div class="input-group-append">
-              <span class="input-group-text" id="basic-addon2">cm</span>
-            </div>
-          </div>
-
-          <div class="input-group mb-3">
-            <label>length:</label>
-            <input type="text" name="length" id="length" class="form-control" >
-            <div class="input-group-append">
-              <span class="input-group-text" id="basic-addon3">cm</span>
-            </div>
-          </div>
-
-          <label>Product properties:</label>
-          <div class="container">
-            <div class="button1"  onclick="forphysical()" id="forphysical">
-              <h3>Physical</h3>
-            </div>
-            <div id="extendphysical">
-              samyak jain is awesome
-            </div>
-          </div>
-          <br>
-          <div class="container">
-            <div class="button1" onclick="forpowder()" id="forpowder">
-              <h3>Powder</h3>
-            </div>
-            <div id="extendpowder">
-              he is smart
-            </div>
-          </div>
-          <br>
-          <div class="container">
-            <div class="button1" onclick="forliquid()" id="forliquid">
-              <h3>Liquid</h3>
-            </div>
-            <div id="extendliquid">
-              sooumil is his friend
-            </div>
-          </div>
-          <br>
-          <div class="input-group">
-            <label>Cost of product</label>
-            <input type="text" name="cost" id="cost" class="form-control" aria-label="ruppee amount ">
-            <div class="input-group-append">
-              <span class="input-group-text">Rs</span>
-            </div>
-          </div>
-
-          <label>priority:</label>
-          <input type="radio" name="priority"  id="priorcost" value="cost" checked> cost
-          <input type="radio" name="priority" id="priorsust" value="sustainability"> sustainability <br>
-          <br>
-
-
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Extra info</span>
-            </div>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
-          </div>
-          <br>
-          <input type="submit" class="button1" name="send" id="send" value="send" />
-        </form>
-      </div>
     </div>
-    
-  </div>
 
-  <div id="powder">
-    <h1>powder</h1>
-  </div>
+    <div id="powder">
+      <h1>powder</h1>
+    </div>
 
-  <div id="liquid">
-    <h1>liquid</h1>
   </div>
-
-</div>
 
 </div><!--scripts-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
