@@ -36,7 +36,7 @@ function handleDrop(e) {
 
 function handleFiles(files) {
   files = [...files]
-  files.forEach(uploadFile)
+  // files.forEach(uploadFile)
   files.forEach(previewFile)
 }
 
