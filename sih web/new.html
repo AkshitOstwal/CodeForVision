@@ -54,11 +54,28 @@
 
     var g = document.getElementById("radius").value;
 
-    var h = document.getElementById("photosensitive").value;
+    if(document.getElementById("photosensitive").checked){
 
-    var i = document.getElementById("flammable").value;
+    var h = 1;}
+    else{
+      var h = 0;
+    }
 
-    var j = document.getElementById("brittle").value;
+    if(document.getElementById("flammable").checked){
+
+    var i = 1;
+  }
+    else{
+      var i =0 ;
+    }
+
+    if(document.getElementById("brittle").checked){
+
+    var j = 1;
+  }
+  else{
+    var j =0;
+  }
 
     var k = document.getElementById("Pressure").value;
 
@@ -66,15 +83,39 @@
 
     var m = document.getElementById("templimit").value;
 
-    var n = document.getElementById("odour").value;
+    if(document.getElementById("odour").checked){
 
-    var o = document.getElementById("o2").value;
+    var n = 1
+  }
 
-    var p = document.getElementById("gas").value;
+  else{
+    var n=0;
+  }
 
-    var q = document.getElementById("moisture").value;
+  if(document.getElementById("o2").checked){
+    var o = 1;
+  }
+  else{
+    var o =0;
+  }
 
-    if(confirm("Your given inputs are:\n\n"+"name of product:"+a+"\nthickness:"+b+"\nwidth:"+c+"\nlength:"+d+"\ncost:"+e+"\npriority:"+f+"\nradius:"+g+"\nphotosensitivity:"+h+"\nflammable"+i+"\nbrittle"+j+"\nPressure"+k+"\nweight"+l+"\ntemplimit"+m+"\nodour"+n+"\no2"+o+"\ngas"+p+"\nmoisture"+q+"\n\n"+"Do you want to send this data or cancel it ?\n"))
+  if(document.getElementById("gas").checked){
+
+    var p = 1;
+  }
+  else{
+    var p = 0;
+  }
+
+
+  if(document.getElementById("moisture").checked){
+    var q = 1;
+  }
+  else{
+    var q= 0;
+  }
+
+    if(confirm("Your given inputs are:\n\n"+"name of product:"+a+"\nthickness:"+b+"\nwidth:"+c+"\nlength:"+d+"\ncost:"+e+"\npriority:"+f+"\nradius:"+g+"\nphotosensitivity:"+h+"\nflammable:"+i+"\nbrittle:"+j+"\nPressure:"+k+"\nweight:"+l+"\ntemplimit:"+m+"\nodour:"+n+"\no2:"+o+"\ngas:"+p+"\nmoisture:"+q+"\n\n"+"Do you want to send this data or cancel it ?\n"))
     {
       firebase.database().ref().set({
         name : a,
@@ -114,15 +155,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
       </ul>
       <form class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
