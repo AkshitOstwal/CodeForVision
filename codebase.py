@@ -19,8 +19,8 @@ users=db.get()
 #print(users.val())
 
 for user in users.each():
-    print(user.key()) 
-    print(user.val()) 
+    print(user.key())
+    print(user.val())
 
 
 
@@ -30,13 +30,13 @@ class glass:
        toxic=0
        moisture_resistance=1
        flexible=0
-       aandb_resist=0
+       aandb_resist=1
        transparent=1
        photosensitivity_resistance=1
        flammable=0
        resist_solvents=1
        def single_layer(self):
-              thickness=0.102 #mm
+              thickness=0.102 #cm
               tensile_strength=10.2 #newton/m^2
               temperature=200 #degree celcius
               weightpercm2=0.6    #gm
@@ -44,7 +44,7 @@ class glass:
               costpercm2=0.08      #in Rs
 
        def double_layer(self):
-              thickness=0.318 
+              thickness=0.318
               tensile_strength=30.2
               temperature=300
               weightpercm2=1.4
@@ -58,26 +58,26 @@ class glass:
               weightpercm2=1.9
               puncture_resistance=0.72
               costpercm2=0.21
-       
-              
+
+
 class aluminium():
        recyclable=1
        toxic=0
        moisture_resistance=1
-       aandb_resist=0
        photosensitivity_resistance=1
        resist_solvents=1
        flammable=0
        transparent=0
        def single_layer(self):
               airtight=0
-              thickness=0.08 # mm
+              thickness=0.08 # cm
               tensile_strength=4.2   #in netwon per m^2
               temperature=150 #celcius
               weightpercm2=0.02 #gm
               puncture_resistance=0.13 #pascle
               costpercm2=0.09  # in rs
-              flexible=1       
+	      aandb_resist=0
+              flexible=1
 
        def double_layer(self):
               airtight=1
@@ -87,8 +87,8 @@ class aluminium():
               weightpercm2=0.08
               puncture_resistance=0.36
               costpercm2=0.25
-              flexible=0
-
+              flexible=1
+	      aandb_resist=1
        def triple_layer(self):
               airtight=1
               thickness=0.27
@@ -98,7 +98,8 @@ class aluminium():
               puncture_resistance=0.55
               costpercm2=0.40
               flexible=0
-       
+              aandb_resist=1
+
 class cardboard():
        airtight=0
        aandb_resist=0
@@ -151,12 +152,14 @@ class cardboard():
               temperature=150
               weightpercm2=0.11
               puncture_resistance=0.16
-              costpercm2=0.30
+              costpercm2=0.28
               resist_solvents=1
               flexible=1
-              
+              airtight=1
+              moisture_resistance=1
+
 class plastic:
-       
+
        def polyethylene():
               airtight=0
               recyclable=1
@@ -172,9 +175,9 @@ class plastic:
               thickness=0.01
               weightpercm2=0.001
               costpercm2=0.005
-              resist_solvents=0
+              resist_solvents=1
               transparent=1
-       
+
        def hdpe():# high density polyethylene
               airtight=1
               recyclable=1
@@ -192,7 +195,7 @@ class plastic:
               costpercm2=0.43
               transparent=1
               resist_solvents=1
-              
+
        def LDPE():
               airtight=1
               recyclable=1
@@ -209,7 +212,8 @@ class plastic:
               weightpercm2=0.04
               costpercm2=0.17
               resist_solvents=1
-              
+              transparent=1
+
        '''def pet:# polyethylene terephthalate
               transparent
               oxygen, water,moisture gas barrier
@@ -223,7 +227,7 @@ class plastic:
               moisture_resistance=1
               flexible=0
               aandb_resist=0
-              photosensitivity_resistance=0
+              photosensitivity_resistance=1
               tensile_strength=8.3
               puncture_resistance=0.18
               temperature=120
@@ -232,6 +236,7 @@ class plastic:
               weightpercm2=0.11
               costpercm2=0.09
               resist_solvents=1
+              transparent=0
 
        def pvc():#Polyvinyl Chloride
               airtight=1
@@ -240,20 +245,16 @@ class plastic:
               moisture_resistance=1
               flexible=0
               aandb_resist=0
-              photosensitivity_resistance=0
+              photosensitivity_resistance=1
               tensile_strength=38.3
-              puncture_resistance=1.78
+              puncture_resistance=3.78
               temperature=320
               flamable=0
               thickness=0.92
-              weightpercm2=0.31
-              costpercm2=0.29
+              weightpercm2=0.36
+              costpercm2=0.60
               resist_solvents=1
-                           
-              
+	          transparent=0
+
+
 # if element is brittle then consider bubble wrap
-
-
-       
-       
-       

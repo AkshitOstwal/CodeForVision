@@ -83,6 +83,21 @@ body {
   text-align: center;
   }
 
+.button3 {
+  display: inline-block;
+  padding: 15px;
+  cursor: pointer;
+  color: #222;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  }
+
+  .bottom-border2 {
+    border-bottom:  3px solid #222; 
+    outline: 0px;
+}
+
   .bottom-border {
     border-bottom:  5px solid #222; 
     outline: 0px;
@@ -99,6 +114,9 @@ body {
 label{
   margin:20px;
   font-size: 20px;
+}
+#circular{
+  display: none;
 }
 
 #powder{
