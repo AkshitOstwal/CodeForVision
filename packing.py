@@ -66,8 +66,8 @@ class biscuit:
               volume=math.pi*r**2*thickness
               packing_shape_cylindrical(area,radius,thickness)
 
-class floor:
-       print("class for floor")
+class flour:
+       print("class for flour")
 
 # the things which are reactive with oxygen would require the free packing, they are gonna get packed in the packet
 # containing nitrogen so it means that the prodct wont be actually arranged in the particular pattern.
