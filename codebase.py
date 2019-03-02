@@ -24,7 +24,7 @@ d={}
 for user in users.each():
     d[user.key()]=user.val()
 
-print(d)
+#print(d)
 
 class glass:
     airtight=1
@@ -34,28 +34,28 @@ class glass:
     flammable=0
     resist_solvents=1
     def single_layer(self):
-        thickness=0.102 #cm
-        tensile_strength=10.2 #newton/m^2
-        temperature=200 #degree celcius
-        weightpercm2=0.6    #gm
-        puncture_resistance=0.21 #pascle
-        costpercm2=0.08      #in Rs
+        self.thickness=0.102 #cm
+        self.tensile_strength=10.2 #newton/m^2
+        self.temperature=200 #degree celcius
+        self.weightpercm2=0.6    #gm
+        self.puncture_resistance=0.21 #pascle
+        self.costpercm2=0.08      #in Rs
 
     def double_layer(self):
-        thickness=0.318
-        tensile_strength=30.2
-        temperature=300
-        weightpercm2=1.4
-        puncture_resistance=0.42
-        costpercm2=0.12
+        self.thickness=0.318
+        self.tensile_strength=30.2
+        self.temperature=300
+        self.weightpercm2=1.4
+        self.puncture_resistance=0.42
+        self.costpercm2=0.12
 
     def triple_layer(self):
-        thickness=0.417
-        tensile_strength=65.2
-        temperature=300
-        weightpercm2=1.9
-        puncture_resistance=0.72
-        costpercm2=0.21
+        self.thickness=0.417
+        self.tensile_strength=65.2
+        self.temperature=300
+        self.weightpercm2=1.9
+        self.puncture_resistance=0.72
+        self.costpercm2=0.21
 
 class aluminium():
     moisture_resistance=1
@@ -63,31 +63,31 @@ class aluminium():
     resist_solvents=1
     flammable=0
     def single_layer(self):
-        airtight=0
-        thickness=0.08 # cm
-        tensile_strength=4.2   #in netwon per m^2
-        temperature=150 #celcius
-        weightpercm2=0.02 #gm
-        puncture_resistance=0.13 #pascle
-        costpercm2=0.09  # in rs
+        self.airtight=0
+        self.thickness=0.08 # cm
+        self.tensile_strength=4.2   #in netwon per m^2
+        self.temperature=150 #celcius
+        self.weightpercm2=0.02 #gm
+        self.puncture_resistance=0.13 #pascle
+        self.costpercm2=0.09  # in rs
 
     def double_layer(self):
-        airtight=1
-        thickness=0.18
-        tensile_strength=11.2
-        temperature=180
-        weightpercm2=0.08
-        puncture_resistance=0.36
-        costpercm2=0.25
+        self.airtight=1
+        self.thickness=0.18
+        self.tensile_strength=11.2
+        self.temperature=180
+        self.weightpercm2=0.08
+        self.puncture_resistance=0.36
+        self.costpercm2=0.25
 
     def triple_layer(self):
-        airtight=1
-        thickness=0.27
-        tensile_strength=33.4
-        temperature=180
-        weightpercm2=0.12
-        puncture_resistance=0.55
-        costpercm2=0.40
+        self.airtight=1
+        self.thickness=0.27
+        self.tensile_strength=33.4
+        self.temperature=180
+        self.weightpercm2=0.12
+        self.puncture_resistance=0.55
+        self.costpercm2=0.40
 
 class cardboard():
     airtight=0
@@ -98,109 +98,132 @@ class cardboard():
     resist_solvents=0
 
     def single_wall(self):
-        thickness=0.20
-        tensile_strength=9.4
-        temperature=130
-        weightpercm2=0.15
-        puncture_resistance=0.20
-        costpercm2=0.17
+        self.thickness=0.20
+        self.tensile_strength=9.4
+        self.temperature=130
+        self.weightpercm2=0.15
+        self.puncture_resistance=0.20
+        self.costpercm2=0.17
 
     def double_wall(self):
-        thickness=0.35
-        tensile_strength=15.1
-        temperature=130
-        weightpercm2=0.23
-        puncture_resistance=0.24
-        costpercm2=0.40
+        self.thickness=0.35
+        self.tensile_strength=15.1
+        self.temperature=130
+        self.weightpercm2=0.23
+        self.puncture_resistance=0.24
+        self.costpercm2=0.40
 
-    def coated():
-        thickness=0.10
-        tensile_strength=8.1
-        temperature=150
-        weightpercm2=0.11
-        puncture_resistance=0.16
-        costpercm2=0.28
-        airtight=1
-        moisture_resistance=1
+    def coated(self):
+        self.thickness=0.10
+        self.tensile_strength=8.1
+        self.temperature=150
+        self.weightpercm2=0.11
+        self.puncture_resistance=0.16
+        self.costpercm2=0.28
+        self.airtight=1
+        self.moisture_resistance=1
 
 class plastic:
-    def polyethylene():
-        airtight=0
-        moisture_resistance=0
-        photosensitivity_resistance=0
-        tensile_strength=1.1
-        puncture_resistance=0.65
-        temperature=90
-        thickness=0.01
-        weightpercm2=0.001
-        costpercm2=0.005
-        resist_solvents=1
-        flamable=1
+    def polyethylene(self):
+        self.airtight=0
+        self.moisture_resistance=0
+        self.photosensitivity_resistance=0
+        self.tensile_strength=1.1
+        self.puncture_resistance=0.65
+        self.temperature=90
+        self.thickness=0.01
+        self.weightpercm2=0.001
+        self.costpercm2=0.005
+        self.resist_solvents=1
+        self.flamable=1
 
-    def hdpe():
-        airtight=1
-        moisture_resistance=1
-        photosensitivity_resistance=0
-        tensile_strength=30.3
-        puncture_resistance=0.73
-        temperature=220
-        flamable=0
-        thickness=0.82
-        weightpercm2=0.09
-        costpercm2=0.43
-        resist_solvents=1
+    def hdpe(self):
+        self.airtight=1
+        self.moisture_resistance=1
+        self.photosensitivity_resistance=0
+        self.tensile_strength=30.3
+        self.puncture_resistance=0.73
+        self.temperature=220
+        self.thickness=0.82
+        self.flamable=0
+        self.weightpercm2=0.09
+        self.costpercm2=0.43
+        self.resist_solvents=1
 
-    def LDPE():
-        airtight=1
-        moisture_resistance=1
-        photosensitivity_resistance=0
-        tensile_strength=18.3
-        puncture_resistance=0.49
-        temperature=170
-        flamable=0
-        thickness=0.22
-        weightpercm2=0.04
-        costpercm2=0.17
-        resist_solvents=1
+    def ldpe(self):
+        self.airtight=1
+        self.moisture_resistance=1
+        self.photosensitivity_resistance=0
+        self.tensile_strength=18.3
+        self.puncture_resistance=0.49
+        self.temperature=170
+        self.flamable=0
+        self.thickness=0.22
+        self.weightpercm2=0.04
+        self.costpercm2=0.17
+        self.resist_solvents=1
 
-    def polystyrene():
-        airtight=1
-        moisture_resistance=1
-        photosensitivity_resistance=1
-        tensile_strength=8.3
-        puncture_resistance=0.18
-        temperature=120
-        flamable=0
-        thickness=0.82
-        weightpercm2=0.11
-        costpercm2=0.09
-        resist_solvents=1
+    def polystyrene(self):
+        self.airtight=1
+        self.moisture_resistance=1
+        self.photosensitivity_resistance=1
+        self.tensile_strength=8.3
+        self.puncture_resistance=0.18
+        self.temperature=120
+        self.flamable=0
+        self.thickness=0.82
+        self.weightpercm2=0.11
+        self.costpercm2=0.09
+        self.resist_solvents=1
 
-    def pvc():
-        airtight=1
-        moisture_resistance=1
-        photosensitivity_resistance=1
-        tensile_strength=38.3
-        puncture_resistance=3.78
-        temperature=320
-        flamable=0
-        thickness=0.92
-        weightpercm2=0.36
-        costpercm2=0.60
-        resist_solvents=1
+    def pvc(self):
+        self.airtight=1
+        self.moisture_resistance=1
+        self.photosensitivity_resistance=1
+        self.tensile_strength=38.3
+        self.puncture_resistance=3.78
+        self.temperature=320
+        self.flamable=0
+        self.thickness=0.92
+        self.weightpercm2=0.36
+        self.costpercm2=0.60
+        self.resist_solvents=1
 
 # if element is brittle then consider bubble wrap
-print("helloo world")
+#print("helloo world")
 # starting with the cardboard
 count=0
 count_list=[]
 c1=cardboard()
+c2=cardboard()
+c3=cardboard()
 c1.single_wall()
-if d["pressure"]<c1.tensile_strength:
-    count+=1
-if d["moisture"]==c1.moisture_resistance:
-    count+=1
-if (d["odour"]==1 or d["o2"]==1) and c1.airtight==1:
-    count+=1
-if d["temperature"]<c1.temperature:
-    count+=1
+c2.double_wall()
+c3.coated()
+p1=plastic()
+p2=plastic()
+p3=plastic()
+p4=plastic()
+p5=plastic()
+p1.polyethylene()
+p2.hdpe()
+p3.ldpe()
+p4.polystyrene()
+p5.pvc()
+l=[c1,c2,c3,p1,p2,p3,p4,p5]
+count_list=[]
+#for i in l:
+#    print(i.thickness,end=" ")
+for i in l:
+    count=0
+    if float(d["moisture"])==i.moisture_resistance:
+        count+=1
+    if float(d["Pressure"])<i.tensile_strength:
+        count+=1
+    if (d["odour"]==1 or d["o2"]==1) and i.airtight==1:
+        count+=1
+    if float(d["templimit"])<i.temperature:
+        count+=1
+    count_list.append([i,count])
+
+#print(count_list)
