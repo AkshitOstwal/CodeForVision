@@ -40,7 +40,6 @@
 
 <script type="text/javascript">
   window.onload = function(){
-    $("#loader").fadeOut("fast");
    document.getElementById('send').onclick = function(e){
     var a=document.getElementById("pname").value;
     var b=document.getElementById("thickness").value;
@@ -115,8 +114,9 @@
         else{
           var q= 0;
         }
+        var r=document.getElementById("height").value;
 
-        if(confirm("Your given inputs are:\n\n"+"name of product:"+a+"\nthickness:"+b+"\nwidth:"+c+"\nlength:"+d+"\ncost:"+e+"\npriority:"+f+"\nradius:"+g+"\nphotosensitivity:"+h+"\nflammable:"+i+"\nbrittle:"+j+"\nPressure:"+k+"\nweight:"+l+"\ntemplimit:"+m+"\nodour:"+n+"\no2:"+o+"\ngas:"+p+"\nmoisture:"+q+"\n\n"+"Do you want to send this data or cancel it ?\n"))
+        if(confirm("Your given inputs are:\n\n"+"name of product:"+a+"\nthickness:"+b+"\nwidth:"+c+"\nlength:"+d+"\ncost:"+e+"\npriority:"+f+"\nradius:"+g+"\nphotosensitivity:"+h+"\nflammable:"+i+"\nbrittle:"+j+"\nPressure:"+k+"\nweight:"+l+"\ntemplimit:"+m+"\nodour:"+n+"\no2:"+o+"\ngas:"+p+"\nmoisture:"+q+"height"+r+"\n\n"+"Do you want to send this data or cancel it ?\n"))
         {
           firebase.database().ref().set({
             name : a,
@@ -136,6 +136,7 @@
             o2 : o,
             gas : p,
             moisture : q,
+            height : r
           });
         }
 
@@ -151,24 +152,21 @@
 <body>
  <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">LOGO</a>
+    <a class="navbar-brand" href="#">CodeForVision</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
       </ul>
-      <form class="form-inline mt-2 mt-md-0">
+      <!-- <form class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> -->
     </div>
   </nav>
 </header>
 
-<div class="text-center" id="loader" style="margin-top:5%">
-    <img src="hb.gif" width="180" height="180">   
-  </div>
 
 <main role="main">
 
@@ -218,16 +216,16 @@
 
             <div id="cuboidal">
               <div class="input-group mb-3">
-                <label>thickness:</label>
+                <label>Height:</label>
 
-                <input type="text" name="thickness" id="thickness" class="form-control" >
+                <input type="text" name="height" id="height" class="form-control" >
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon1">cm</span>
                 </div>
               </div>
 
               <div class="input-group mb-3">
-                <label>width:</label>
+                <label>Width:</label>
                 <input type="text" name="width" id="width" class="form-control" >
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon2">cm</span>
@@ -235,7 +233,7 @@
               </div>
 
               <div class="input-group mb-3">
-                <label>length:</label>
+                <label>Length:</label>
                 <input type="text" name="length" id="length" class="form-control" >
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon3">cm</span>
@@ -244,12 +242,20 @@
             </div>
             <div id="circular">
               <div class="input-group mb-3">
-                <label>radius:</label>
+                <label>Radius:</label>
                 <input type="text" name="radius" id="radius" class="form-control" >
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon3">cm</span>
                 </div>
               </div>
+              <div class="input-group mb-3">
+                <label>Thickness:</label>
+                <input type="text" name="thickness" id="thickness" class="form-control" >
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon3">cm</span>
+                </div>
+              </div>
+
             </div>
 
             <label>Product properties:</label>
