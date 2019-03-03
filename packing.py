@@ -26,6 +26,11 @@ firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
 users=db.get()
+
+while(users.val()==None){
+	pass
+}
+
 d={}
 for user in users.each():
     d[user.key()]=user.val()
