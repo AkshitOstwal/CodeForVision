@@ -27,9 +27,9 @@ db = firebase.database()
 
 users=db.get()
 
-while(users.val()==None){
+'''while(users.val()==None){
 	pass
-}
+}'''
 
 d={}
 for user in users.each():
@@ -100,8 +100,8 @@ class biscuit:
         for i in range (len(l)):
                 l[i].append(l[i][1]*i[0].costpercm2)
 
-        l.sort(key=lambda x: x[1], reverse=True)
-        #print("hello",l[0])
+        l.sort(key=lambda x: x[2], reverse=True)
+        print("hello",l[0])
 
     def cuboidal(self):
         #print("Hello")
