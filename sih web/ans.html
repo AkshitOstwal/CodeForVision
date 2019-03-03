@@ -14,6 +14,34 @@
 
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-storage.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyByA7celafHSloxdOLA7_s-D097Ld10Jus",
+    authDomain: "firepack-66e50.firebaseapp.com",
+    databaseURL: "https://firepack-66e50.firebaseio.com",
+    projectId: "firepack-66e50",
+    storageBucket: "firepack-66e50.appspot.com",
+    messagingSenderId: "133886572018"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  var starCountRef = firebase.database().ref('ans/');
+
+  starCountRef.on('value',snap=> {
+    document.getElementById('finalans').innerHtml="snap.val()"
+    snap.val()==null
+}
+
+</script>
   </head>
 
   <body>
