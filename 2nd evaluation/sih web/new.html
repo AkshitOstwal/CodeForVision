@@ -40,7 +40,6 @@
 
 <script type="text/javascript">
   window.onload = function(){
-    $("#loader").fadeOut("fast");
    document.getElementById('send').onclick = function(e){
     var a=document.getElementById("pname").value;
     var b=document.getElementById("thickness").value;
@@ -54,96 +53,6 @@
       var f=document.getElementById("priorsust").value;}
 
       var g = document.getElementById("radius").value;
-<<<<<<< HEAD
-
-      if(document.getElementById("photosensitive").checked){
-
-        var h = 1;}
-        else{
-          var h = 0;
-        }
-
-        if(document.getElementById("flammable").checked){
-
-          var i = 1;
-        }
-        else{
-          var i =0 ;
-        }
-
-        if(document.getElementById("brittle").checked){
-
-          var j = 1;
-        }
-        else{
-          var j =0;
-        }
-
-        var k = document.getElementById("Pressure").value;
-
-        var l = document.getElementById("weight").value;
-
-        var m = document.getElementById("templimit").value;
-
-        if(document.getElementById("odour").checked){
-
-          var n = 1
-        }
-
-        else{
-          var n=0;
-        }
-
-        if(document.getElementById("o2").checked){
-          var o = 1;
-        }
-        else{
-          var o =0;
-        }
-
-        if(document.getElementById("gas").checked){
-
-          var p = 1;
-        }
-        else{
-          var p = 0;
-        }
-
-
-        if(document.getElementById("moisture").checked){
-          var q = 1;
-        }
-        else{
-          var q= 0;
-        }
-
-        if(confirm("Your given inputs are:\n\n"+"name of product:"+a+"\nthickness:"+b+"\nwidth:"+c+"\nlength:"+d+"\ncost:"+e+"\npriority:"+f+"\nradius:"+g+"\nphotosensitivity:"+h+"\nflammable:"+i+"\nbrittle:"+j+"\nPressure:"+k+"\nweight:"+l+"\ntemplimit:"+m+"\nodour:"+n+"\no2:"+o+"\ngas:"+p+"\nmoisture:"+q+"\n\n"+"Do you want to send this data or cancel it ?\n"))
-        {
-          firebase.database().ref().set({
-            name : a,
-            thickness: b,
-            width : c,
-            length : d,
-            cost: e,
-            priorcost: f,
-            radius : g,
-            photosensitive : h,
-            flammable : i,
-            brittle : j,
-            Pressure : k,
-            weight : l,
-            templimit : m,
-            odour : n,
-            o2 : o,
-            gas : p,
-            moisture : q,
-          });
-        }
-
-
-      }
-
-=======
 
       if(document.getElementById("photosensitive").checked){
 
@@ -234,7 +143,6 @@
 
       }
 
->>>>>>> 00579e0f4b87da2b4b8141af32537dd955eb2700
     }
   </script>
 
@@ -259,12 +167,6 @@
   </nav>
 </header>
 
-<<<<<<< HEAD
-<div class="text-center" id="loader" style="margin-top:5%">
-    <img src="hb.gif" width="180" height="180">   
-  </div>
-=======
->>>>>>> 00579e0f4b87da2b4b8141af32537dd955eb2700
 
 <main role="main">
 
@@ -273,7 +175,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm button2 bottom-border" style="text-align: right;" onclick="areasolid()" id="t1" >
+      <div class="col-sm button2 bottom-border" style="text-align: right" onclick="areasolid()" id="t1" >
         Solid
       </div>
       <!-- <div class="col-sm button2" onclick="areapowder()" id="t2">
@@ -282,8 +184,7 @@
     </div>
   </div>
 
-  <br>
-  <br>
+  <br><br>
 
   <div class="container">
     <div id="solid">
@@ -300,12 +201,11 @@
           <form class="my-form" method="POST">
             <div class="input">
               <label>Product:</label>
-              <select>
-  <option value="Biscuits">Biscuit</option>
-  <option value="Chips">Chips</option>
-  <option value="Chocolate">Chocolate</option>
-  <option value="Candy">Candy</option>
-</select>
+              <br>
+              <select id="name">
+                <option value="Biscuit">Biscuit</option>
+                <option value=""></option>
+              </select> 
             </div>
 
             <label>Product Dimensions:</label><br>
@@ -318,26 +218,16 @@
 
             <div id="cuboidal">
               <div class="input-group mb-3">
-<<<<<<< HEAD
-                <label>thickness:</label>
-
-                <input type="text" name="thickness" id="thickness" class="form-control" >
-=======
                 <label>Height:</label>
 
                 <input type="text" name="height" id="height" class="form-control" >
->>>>>>> 00579e0f4b87da2b4b8141af32537dd955eb2700
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon1">cm</span>
                 </div>
               </div>
 
               <div class="input-group mb-3">
-<<<<<<< HEAD
-                <label>width:</label>
-=======
                 <label>Width:</label>
->>>>>>> 00579e0f4b87da2b4b8141af32537dd955eb2700
                 <input type="text" name="width" id="width" class="form-control" >
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon2">cm</span>
@@ -345,11 +235,7 @@
               </div>
 
               <div class="input-group mb-3">
-<<<<<<< HEAD
-                <label>length:</label>
-=======
                 <label>Length:</label>
->>>>>>> 00579e0f4b87da2b4b8141af32537dd955eb2700
                 <input type="text" name="length" id="length" class="form-control" >
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon3">cm</span>
@@ -358,11 +244,7 @@
             </div>
             <div id="circular">
               <div class="input-group mb-3">
-<<<<<<< HEAD
-                <label>radius:</label>
-=======
                 <label>Radius:</label>
->>>>>>> 00579e0f4b87da2b4b8141af32537dd955eb2700
                 <input type="text" name="radius" id="radius" class="form-control" >
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon3">cm</span>
