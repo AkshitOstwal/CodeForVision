@@ -14,13 +14,13 @@ A website in which the properties of the objects will be taken as an input and t
 object can sustain much longer also the most optimum orientation and design of the product which can minimize the area of packing.
 In this whole process the cost optimization is the prime objective.
 #### Stage 1:
-1. Make front end of website.
-2. Implementation of backend frameworks.
-3. Either get data set from ITC or create a demo data set.
-4. Prepared 'codebase.py' file. In this file there is the demo dataset of some materials which are commonly used for packaging.
+- [x] 1. Make front end of website.
+- [x] 2. Implementation of backend frameworks.
+- [x] 3. Either get data set from ITC or create a demo data set.
+- [x] 4. Prepare 'codebase.py' file. In this file there should be the demo dataset of some materials which are commonly used for packaging.
 
 #### Stage 2:
-A website that will take the inputs of the certain properties of the object from the user, store it in database and compare with the package material which is best suitable for that object.
+- [x] A website that will take the inputs of the certain properties of the object from the user, store it in database and compare with the package material which is best suitable for that object.
 This comparison is done between the data which is pre-loaded in file 'codebase.py' and the user inputs. After a careful analysis of the properties of packing material which suits the object, a list is generated of suitable materials.
 Getting the data from the firebase using 'pyrebase'.
 <strong>Properties which are taken as an input from the users are: </strong>
@@ -59,20 +59,20 @@ For more information, please refer [this](https://github.com/AkshitOstwal/CodeFo
 
 #### Stage 3:
 
-1. Code 'orientation.py'.
-2. Design an algorithm which will test all the possible arrangements of the object in the packing packet and then return the one which is occupies minimum surface area and is also durable.  
-3. Generate the best possible arrangement of product inside the packing, determine shape and surface area of the packing.
-4. Making front End for the results page.
-5. Making javascript for the processing page.
+- [x] 1. Code 'orientation.py'.
+- [x] 2. Design an algorithm which will test all the possible arrangements of the object in the packing packet and then return the one which is occupies minimum surface area and is also durable.  
+- [x] 3. Generate the best possible arrangement of product inside the packing, determine shape and surface area of the packing.
+- [x] 4. Making front End for the results page.
+- [x] 5. Making javascript for the processing page.
 
 #### Stage 4:
 
-1. Code 'packing.py'
-2. Now link the cost and properties of each material in 'codebase.py' and the defined the best possible orientation with a logic in which we find out the most optimum packaging of the object.
-3. In that file we will link the codebase.py , orientation.py. From these files we find out the areas of all possible orientations and the best materials used for the objects.
-5. Linking the firebase and the python file.
-6. Importing the files 'codebase.py' and 'orientation.py' in 'packing.py'.
-7. Sending data in the form of list from packing.py to the firebase and then from to the website.
+- [x] 1. Code 'packing.py'
+- [x] 2. Now link the cost and properties of each material in 'codebase.py' and the defined the best possible orientation with a logic in which we find out the most optimum packaging of the object.
+- [x] 3. In that file we will link the codebase.py , orientation.py. From these files we find out the areas of all possible orientations and the best materials used for the objects.
+- [x] 5. Linking the firebase and the python file.
+- [x] 6. Importing the files 'codebase.py' and 'orientation.py' in 'packing.py'.
+- [x] 7. Sending data in the form of list from packing.py to the firebase and then from to the website.
 
 ### **Important Links**
 [Food Dynamics](http://www.ift.org/knowledge-center/read-ift-publications/science-reports/scientific-status-summaries/food-packaging.aspx)
