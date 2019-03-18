@@ -26,6 +26,9 @@ for user in users.each():
 
 #print(d)
 
+# each class represent a packaging material and contains its properties like airtightness,transparent etc
+# airtight = 1 means material is airtight
+# airtight = 0 means material is not airtight
 class glass:
     airtight=1
     moisture_resistance=1
