@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>result</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="carousel.css" rel="stylesheet">
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-storage.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyByA7celafHSloxdOLA7_s-D097Ld10Jus",
+    authDomain: "firepack-66e50.firebaseapp.com",
+    databaseURL: "https://firepack-66e50.firebaseio.com",
+    projectId: "firepack-66e50",
+    storageBucket: "firepack-66e50.appspot.com",
+    messagingSenderId: "133886572018"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  var starCountRef = firebase.database().ref('ans/');
+  starCountRef.on('value',snap=> {
+    setTimeout(function(){
+      document.getElementById("loader").style.display="none";
+      document.getElementById("main").style.display="block";
+      document.getElementById("finalans").innerHTML=snap.val().js;}, 2000);
+  });
+
+  var starCountRef2 = firebase.database().ref('ans2/');
+  starCountRef2.on('value',snap=> {
+    setTimeout(function(){
+      var l = snap.val().area;
+      console.log(l);
+      for(i in l){
+      var node = document.createElement("p");
+      var textnode = document.createTextNode(l[i]);
+      node.appendChild(textnode);
+      document.getElementById("finalans2").appendChild(node);}}, 2000);
+  });
+setTimeout(function(){firebase.database().ref().set({});},10000);
+
+
+</script>
+
+
+</head>
+<body>
+	<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">LOGO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <div id="loader">
+   <h1 class="text-center" style="margin-top: 10%">Optimizing the Packaging <br> Design...</h1>
+
+   <div class="text-center" style="margin-top:5%">
+    <img src="hb.gif" width="180" height="180">
+  </div>
+
+</div>
+
+<div id="main" style="display: none;">
+
+  <main role="main" style="text-align: center;">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">RESULT</h1>
+        <div><h3>packaging materials with their cost of packaging written before it:-</h3></div>
+        <div id="finalans">
+
+        </div>
+        <br><br>
+        <div><h3>Area used for packaging in different orientation:-</h3></div>
+        <div id="finalans2">
+
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+          <!-- Card -->
+          <div class=" col ans">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="img/aluminium.jpg"  style="height: 200px; width: 200px;" alt="Card image cap">
+
+            <!-- Card content -->
+            <div>
+
+              <!-- Title -->
+              <h4 ><a>Aluminium</a></h4>
+              <!-- Text -->
+
+
+
+            </div>
+
+          </div >
+          <!-- Card -->
+          <div class=" col ans">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="img/poly.jpg"  style="height: 200px; width: 200px;" alt="Card image cap">
+
+            <!-- Card content -->
+            <div>
+
+              <!-- Title -->
+              <h4 ><a>Polythene</a></h4>
+              <!-- Text -->
+
+
+
+            </div>
+
+          </div>
+          <div class="col ans">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="img/pvc.jpg"  style="height: 200px; width: 200px;" alt="Card image cap">
+
+            <!-- Card content -->
+            <div>
+
+              <!-- Title -->
+              <h4 ><a>PVC</a></h4>
+              <!-- Text -->
+
+
+
+            </div>
+
+          </div>
+
+          <div class="col ans">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="img/foldable.jpg"  style="height: 200px; width: 200px;" alt="Card image cap">
+
+            <!-- Card content -->
+            <div>
+
+              <!-- Title -->
+              <h4 ><a>Foldable Box</a></h4>
+              <!-- Text -->
+
+
+
+            </div>
+
+          </div>
+          <div class="col ans">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="img/currogated.jpg"  style="height: 200px; width: 200px;" alt="Card image cap">
+
+            <!-- Card content -->
+            <div>
+
+              <!-- Title -->
+              <h4 ><a>Currogated Box</a></h4>
+              <!-- Text -->
+
+            </div>
+
+          </div>
+
+          <div class="col ans">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="img/rigid.jpg"  style="height: 200px; width: 200px;" alt="Card image cap">
+
+            <!-- Card content -->
+            <div>
+
+              <!-- Title -->
+              <h4 ><a>Rigid Box</a></h4>
+              <!-- Text -->
+
+
+
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+  </body>
+  </html>

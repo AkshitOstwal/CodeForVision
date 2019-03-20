@@ -116,6 +116,8 @@
         }
         var r=document.getElementById("height").value;
 
+        var s=document.getElementById("launch").value;
+
         if(confirm("Your given inputs are:\n\n"+"name of product:"+a+"\nthickness:"+b+"\nwidth:"+c+"\nlength:"+d+"\ncost:"+e+"\npriority:"+f+"\nradius:"+g+"\nphotosensitivity:"+h+"\nflammable:"+i+"\nbrittle:"+j+"\nPressure:"+k+"\nweight:"+l+"\ntemplimit:"+m+"\nodour:"+n+"\no2:"+o+"\ngas:"+p+"\nmoisture:"+q+"height"+r+"\n\n"+"Do you want to send this data or cancel it ?\n"))
         {
           firebase.database().ref().set({
@@ -136,7 +138,8 @@
             o2 : o,
             gas : p,
             moisture : q,
-            height : r
+            height : r,
+            launch : s,
           });
         }
 
@@ -198,11 +201,11 @@
           <img src="img/thirdsolid.jpg" alt="solid material pic" width="100%">
         </div>
         <div class="col-sm">
-          <form class="my-form" method="POST">
+          <form class="my-form" method="POST" action="Loadingpage.html">
             <div class="input">
               <label>Product:</label>
               <br>
-              <select id="name">
+              <select id="pname">
                 <option value="Biscuit">Biscuit</option>
                 <option value=""></option>
               </select> 
@@ -274,7 +277,7 @@
                 <input type="checkbox" name="brittle" id="brittle" value="brittle">  Brittle nature<br>
                 <label>Pressure bearing capacity: </label>
                 <input type="text" name="Pressure" id="Pressure" class="form-control" placeholder="Pressure bearing capacity" ><br>
-                <label>weight per cm2:</label>
+                <label>weight of 1 biscuit</label>
                 <input type="text" name="weight" id="weight" class="form-control" placeholder="weight" ><br>
                 <label>Temperature limit:</label>
                 <input type="text" name="templimit" id="templimit" class="form-control" placeholder="Temperature" ><br>
@@ -295,7 +298,8 @@
               </div>
             </div>
             <br>
-
+            <label>launch packet weight:</label>
+                <input type="text" name="launch" id="launch" class="form-control" placeholder="launch packet weight" ><br>
             <br>
             <div class="input-group">
               <label>Cost of product</label>
